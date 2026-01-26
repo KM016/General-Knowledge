@@ -4,6 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Da Game</title>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,7 +18,9 @@
   <main class="app">
     <section id="login" class="panel">
       <div class="brand">
-        <div class="logo">Q</div>
+        <div class="logo">
+          <img src="/android-chrome-192x192.png" alt="Q" />
+        </div>
         <div>
           <h1>Da Game</h1>
           <p class="muted">insert some quote</p>
@@ -41,7 +48,7 @@
         <p class="muted">This is what the game master will see.</p>
         <div class="field">
           <label>Display name</label>
-          <input id="player-name-input" maxlength="32" placeholder="e.g. Alex" />
+          <input id="player-name-input" maxlength="32" placeholder="e.g. Sexter Morgan" />
         </div>
         <button id="player-name-btn" class="primary">Start Playing</button>
       </div>
@@ -66,10 +73,9 @@
       <div class="gm-head">
         <div>
           <h2>Game Master</h2>
-          <p class="muted">Control the round</p>
+          <p class="muted">67</p>
         </div>
         <div class="gm-actions">
-          <button id="gm-reveal">Reveal</button>
           <button id="gm-next" class="primary">Next</button>
         </div>
       </div>
@@ -82,7 +88,7 @@
         </div>
 
         <div class="card">
-          <div class="label">Buzzer Queue</div>
+          <div class="label">Queue</div>
           <ol id="gm-queue" class="queue"></ol>
           <div class="row">
             <button id="gm-correct" class="good">Correct</button>

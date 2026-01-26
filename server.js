@@ -62,7 +62,7 @@ const state = {
   questions: loadQuestions(config.questionsFile),
   currentIndex: 0,
   queue: [], // array of socket ids
-  revealed: false,
+  revealed: true,
   players: new Map(), // socketId -> { name, score }
 };
 
@@ -73,7 +73,7 @@ function getCurrentQuestion() {
 
 function resetRound() {
   state.queue = [];
-  state.revealed = false;
+  state.revealed = true;
 }
 
 function broadcastState() {
@@ -83,13 +83,28 @@ function broadcastState() {
     .filter(Boolean)
     .map((p) => p.name);
 
-  io.emit('state', {
+  const basePayload = {
     question: question ? question.q : null,
-    revealed: state.revealed,
-    answer: state.revealed && question ? question.a : null,
     queue: queueNames,
     scores: Array.from(state.players.values()).map((p) => ({ name: p.name, score: p.score })),
-  });
+    round: state.currentIndex,
+  };
+
+  for (const socket of io.sockets.sockets.values()) {
+    if (socket.data.role === 'gm') {
+      socket.emit('state', {
+        ...basePayload,
+        revealed: true,
+        answer: question ? question.a : null,
+      });
+    } else if (socket.data.role === 'player') {
+      socket.emit('state', {
+        ...basePayload,
+        revealed: false,
+        answer: null,
+      });
+    }
+  }
 }
 
 io.on('connection', (socket) => {
@@ -104,6 +119,7 @@ io.on('connection', (socket) => {
       return;
     }
 
+    socket.data.role = isGM ? 'gm' : 'player';
     socket.emit('login_result', {
       ok: true,
       role: isGM ? 'gm' : 'player',
@@ -134,7 +150,6 @@ io.on('connection', (socket) => {
 
   socket.on('buzz', () => {
     if (!state.players.has(socket.id)) return;
-    if (state.revealed) return;
     if (!getCurrentQuestion()) return;
     if (state.queue.includes(socket.id)) return;
 
@@ -145,11 +160,6 @@ io.on('connection', (socket) => {
   socket.on('gm_next', () => {
     state.currentIndex += 1;
     resetRound();
-    broadcastState();
-  });
-
-  socket.on('gm_reveal', () => {
-    state.revealed = true;
     broadcastState();
   });
 

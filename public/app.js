@@ -22,13 +22,14 @@ const gmAnswer = document.getElementById('gm-answer');
 const gmQueue = document.getElementById('gm-queue');
 const gmScores = document.getElementById('gm-scores');
 const gmNext = document.getElementById('gm-next');
-const gmReveal = document.getElementById('gm-reveal');
 const gmCorrect = document.getElementById('gm-correct');
 const gmIncorrect = document.getElementById('gm-incorrect');
 const gmReset = document.getElementById('gm-reset');
 
 let role = null;
 let myName = null;
+let hasBuzzed = false;
+let lastRound = null;
 
 function showPanel(panel) {
   loginCard.classList.add('hidden');
@@ -52,10 +53,11 @@ nameBtn.addEventListener('click', () => {
 
 buzzer.addEventListener('click', () => {
   socket.emit('buzz');
+  hasBuzzed = true;
+  buzzer.disabled = true;
 });
 
 if (gmNext) gmNext.addEventListener('click', () => socket.emit('gm_next'));
-if (gmReveal) gmReveal.addEventListener('click', () => socket.emit('gm_reveal'));
 if (gmCorrect) gmCorrect.addEventListener('click', () => socket.emit('gm_correct'));
 if (gmIncorrect) gmIncorrect.addEventListener('click', () => socket.emit('gm_incorrect'));
 if (gmReset) gmReset.addEventListener('click', () => socket.emit('gm_reset_scores'));
@@ -104,9 +106,20 @@ socket.on('state', (state) => {
   }
 
   if (role === 'player') {
-    const isActive = !!state.question && !state.revealed;
-    buzzer.disabled = !myName || !isActive;
-    buzzerStatus.textContent = isActive ? 'Buzzer active!' : 'Waiting for a question…';
+    const isActive = !!state.question;
+    if (state.round !== lastRound) {
+      hasBuzzed = false;
+      lastRound = state.round;
+    }
+
+    buzzer.disabled = !myName || !isActive || hasBuzzed;
+    if (!isActive) {
+      buzzerStatus.textContent = 'Waiting for a question…';
+    } else if (hasBuzzed) {
+      buzzerStatus.textContent = 'Buzzed! Wait for the host.';
+    } else {
+      buzzerStatus.textContent = 'Buzzer active!';
+    }
 
     const me = state.scores.find((p) => p.name === myName);
     playerScore.textContent = me ? me.score : '0';
