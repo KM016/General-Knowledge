@@ -2,11 +2,11 @@
   "port": 3000,
   "questionsFile": "data/questions.jsonl",
   "gameMaster": {
-    "username": "gm",
-    "password": "gm123"
+    "username": "Masterbaiter",
+    "password": "masterbaiter696767"
   },
   "playerLogin": {
-    "username": "player",
-    "password": "play123"
+    "username": "Iplaywith...",
+    "password": "mowajiib6769"
   }
 }

@@ -240,6 +240,22 @@ button:disabled {
   color: var(--muted);
 }
 
+.meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .question {
   font-size: 20px;
   margin-top: 12px;
@@ -288,5 +304,42 @@ button:disabled {
   .buzzer {
     width: 200px;
     height: 200px;
+  }
+}
+.mode-grid {
+  display: grid;
+  gap: 12px;
+  margin: 14px 0 8px;
+}
+
+.mode-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px 16px;
+  border-radius: 16px;
+  text-align: left;
+  display: grid;
+  gap: 6px;
+}
+
+.mode-btn small {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.18);
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+  margin: 18px auto 6px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

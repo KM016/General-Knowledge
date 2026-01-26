@@ -45,12 +45,20 @@
     <section id="name" class="panel hidden">
       <div class="card">
         <h2>Pick your name</h2>
-        <p class="muted">This is what the game master will see.</p>
+        <p class="muted">ISTG if someone puts 67...</p>
         <div class="field">
           <label>Display name</label>
           <input id="player-name-input" maxlength="32" placeholder="e.g. Sexter Morgan" />
         </div>
         <button id="player-name-btn" class="primary">Start Playing</button>
+      </div>
+    </section>
+
+    <section id="waiting" class="panel hidden">
+      <div class="card">
+        <h2>Waiting for host</h2>
+        <p class="muted">The host is selecting a game mode.</p>
+        <div class="spinner"></div>
       </div>
     </section>
 
@@ -69,6 +77,29 @@
       </div>
     </section>
 
+    <section id="gm-mode" class="panel hidden">
+      <div class="card">
+        <h2>Choose game mode</h2>
+        <p class="muted">Pick how the round ends.</p>
+        <div class="mode-grid">
+          <button id="mode-infinite" class="mode-btn">
+            <span>Infinite</span>
+            <small>Play endlessly</small>
+          </button>
+          <button id="mode-first" class="mode-btn">
+            <span>First to</span>
+            <small>Race to a target score</small>
+          </button>
+        </div>
+        <div id="first-to-config" class="field hidden">
+          <label>Target score (10–100)</label>
+          <input id="first-to-input" type="number" min="10" max="100" value="10" />
+          <button id="first-to-start" class="primary">Start</button>
+        </div>
+        <p id="mode-error" class="error"></p>
+      </div>
+    </section>
+
     <section id="gm" class="panel hidden">
       <div class="gm-head">
         <div>
@@ -83,6 +114,10 @@
       <div class="gm-grid">
         <div class="card">
           <div class="label">Question</div>
+          <div class="meta">
+            <span id="gm-category" class="tag">Category</span>
+            <span id="gm-difficulty" class="tag">Difficulty</span>
+          </div>
           <div id="gm-question" class="question">No questions loaded</div>
           <div id="gm-answer" class="answer"></div>
         </div>

@@ -23,7 +23,13 @@ function loadQuestions(filePath) {
     const parsed = JSON.parse(raw);
     if (!Array.isArray(parsed)) return [];
     return parsed
-      .map((item) => ({ q: String(item.q || '').trim(), a: String(item.a || '').trim() }))
+      .map((item) => ({
+        id: item.id,
+        category: String(item.category || '').trim(),
+        difficulty: String(item.difficulty || '').trim(),
+        q: String(item.question || item.q || '').trim(),
+        a: String(item.answer || item.a || '').trim(),
+      }))
       .filter((qa) => qa.q && qa.a);
   }
 
@@ -35,7 +41,13 @@ function loadQuestions(filePath) {
       .map((line) => {
         try {
           const item = JSON.parse(line);
-          return { q: String(item.q || '').trim(), a: String(item.a || '').trim() };
+          return {
+            id: item.id,
+            category: String(item.category || '').trim(),
+            difficulty: String(item.difficulty || '').trim(),
+            q: String(item.question || item.q || '').trim(),
+            a: String(item.answer || item.a || '').trim(),
+          };
         } catch (_) {
           return null;
         }
@@ -60,21 +72,57 @@ function loadQuestions(filePath) {
 
 const state = {
   questions: loadQuestions(config.questionsFile),
-  currentIndex: 0,
+  questionOrder: [],
+  questionPos: 0,
   queue: [], // array of socket ids
   revealed: true,
   players: new Map(), // socketId -> { name, score }
+  mode: null, // 'first_to' | 'infinite'
+  targetScore: null,
+  started: false,
 };
 
 function getCurrentQuestion() {
-  if (!state.questions.length) return null;
-  return state.questions[state.currentIndex % state.questions.length];
+  if (!state.questions.length || !state.questionOrder.length) return null;
+  const index = state.questionOrder[state.questionPos % state.questionOrder.length];
+  return state.questions[index] || null;
 }
 
 function resetRound() {
   state.queue = [];
   state.revealed = true;
 }
+
+function resetGame() {
+  resetRound();
+  for (const player of state.players.values()) {
+    player.score = 0;
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function initQuestionOrder() {
+  state.questionOrder = state.questions.map((_, i) => i);
+  shuffle(state.questionOrder);
+  state.questionPos = 0;
+}
+
+function advanceQuestion() {
+  if (!state.questionOrder.length) return;
+  state.questionPos += 1;
+  if (state.questionPos >= state.questionOrder.length) {
+    shuffle(state.questionOrder);
+    state.questionPos = 0;
+  }
+}
+
+initQuestionOrder();
 
 function broadcastState() {
   const question = getCurrentQuestion();
@@ -87,7 +135,10 @@ function broadcastState() {
     question: question ? question.q : null,
     queue: queueNames,
     scores: Array.from(state.players.values()).map((p) => ({ name: p.name, score: p.score })),
-    round: state.currentIndex,
+    round: state.questionPos,
+    mode: state.mode,
+    targetScore: state.targetScore,
+    started: state.started,
   };
 
   for (const socket of io.sockets.sockets.values()) {
@@ -96,12 +147,16 @@ function broadcastState() {
         ...basePayload,
         revealed: true,
         answer: question ? question.a : null,
+        category: question ? question.category : null,
+        difficulty: question ? question.difficulty : null,
       });
     } else if (socket.data.role === 'player') {
       socket.emit('state', {
         ...basePayload,
         revealed: false,
         answer: null,
+        category: null,
+        difficulty: null,
       });
     }
   }
@@ -151,6 +206,7 @@ io.on('connection', (socket) => {
   socket.on('buzz', () => {
     if (!state.players.has(socket.id)) return;
     if (!getCurrentQuestion()) return;
+    if (!state.started) return;
     if (state.queue.includes(socket.id)) return;
 
     state.queue.push(socket.id);
@@ -158,9 +214,38 @@ io.on('connection', (socket) => {
   });
 
   socket.on('gm_next', () => {
-    state.currentIndex += 1;
+    if (!state.started) return;
+    advanceQuestion();
     resetRound();
     broadcastState();
+  });
+
+  socket.on('gm_set_mode', ({ mode, targetScore }, ack) => {
+    if (socket.data.role !== 'gm') {
+      if (typeof ack === 'function') ack({ ok: false, message: 'Not authorized.' });
+      return;
+    }
+    if (mode !== 'first_to' && mode !== 'infinite') {
+      if (typeof ack === 'function') ack({ ok: false, message: 'Invalid mode.' });
+      return;
+    }
+    state.mode = mode;
+    state.targetScore = mode === 'first_to' ? Number(targetScore) : null;
+    if (mode === 'first_to') {
+      if (!Number.isInteger(state.targetScore)) {
+        if (typeof ack === 'function') ack({ ok: false, message: 'Target must be a number.' });
+        return;
+      }
+      if (state.targetScore < 10 || state.targetScore > 100) {
+        if (typeof ack === 'function') ack({ ok: false, message: 'Target must be 10–100.' });
+        return;
+      }
+    }
+    resetGame();
+    state.started = true;
+    resetRound();
+    broadcastState();
+    if (typeof ack === 'function') ack({ ok: true });
   });
 
   socket.on('gm_correct', () => {
@@ -172,6 +257,10 @@ io.on('connection', (socket) => {
     player.score += 1;
     state.queue = [];
     state.revealed = true;
+    if (state.mode === 'first_to' && state.targetScore && player.score >= state.targetScore) {
+      resetGame();
+      advanceQuestion();
+    }
     broadcastState();
   });
 
