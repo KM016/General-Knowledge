@@ -1,6 +1,7 @@
 const socket = io();
 
 const loginCard = document.getElementById('login');
+const nameCard = document.getElementById('name');
 const playerCard = document.getElementById('player');
 const gmCard = document.getElementById('gm');
 const loginBtn = document.getElementById('login-btn');
@@ -9,7 +10,6 @@ const loginError = document.getElementById('login-error');
 const usernameInput = document.getElementById('login-username');
 const passwordInput = document.getElementById('login-password');
 
-const namePick = document.getElementById('name-pick');
 const nameInput = document.getElementById('player-name-input');
 const nameBtn = document.getElementById('player-name-btn');
 const namePill = document.getElementById('player-name-pill');
@@ -29,6 +29,14 @@ const gmReset = document.getElementById('gm-reset');
 
 let role = null;
 let myName = null;
+
+function showPanel(panel) {
+  loginCard.classList.add('hidden');
+  nameCard.classList.add('hidden');
+  playerCard.classList.add('hidden');
+  gmCard.classList.add('hidden');
+  panel.classList.remove('hidden');
+}
 
 loginBtn.addEventListener('click', () => {
   loginError.textContent = '';
@@ -59,18 +67,17 @@ socket.on('login_result', (res) => {
   }
 
   role = res.role;
-  loginCard.classList.add('hidden');
   if (role === 'gm') {
-    gmCard.classList.remove('hidden');
+    showPanel(gmCard);
   } else {
-    playerCard.classList.remove('hidden');
+    showPanel(nameCard);
   }
 });
 
 socket.on('name_set', ({ name }) => {
   myName = name;
   namePill.textContent = name;
-  namePick.classList.add('hidden');
+  showPanel(playerCard);
 });
 
 socket.on('state', (state) => {

@@ -3,80 +3,98 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quiz Buzzer</title>
+  <title>Da Game</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg"></div>
+  <div class="bg-gradient"></div>
+  <div class="bg-noise"></div>
+
   <main class="app">
-    <section id="login" class="card">
-      <h1>Quiz Buzzer</h1>
-      <p class="muted">Log in to start</p>
-      <div class="field">
-        <label>Username</label>
-        <input id="login-username" autocomplete="username" />
+    <section id="login" class="panel">
+      <div class="brand">
+        <div class="logo">Q</div>
+        <div>
+          <h1>Da Game</h1>
+          <p class="muted">insert some quote</p>
+        </div>
       </div>
-      <div class="field">
-        <label>Password</label>
-        <input id="login-password" type="password" autocomplete="current-password" />
+
+      <div class="card">
+        <h2>Sign in</h2>
+        <div class="field">
+          <label>Username</label>
+          <input id="login-username" autocomplete="username" />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input id="login-password" type="password" autocomplete="current-password" />
+        </div>
+        <button id="login-btn" class="primary">Continue</button>
+        <p id="login-error" class="error"></p>
       </div>
-      <button id="login-btn">Log in</button>
-      <p id="login-error" class="error"></p>
     </section>
 
-    <section id="player" class="card hidden">
-      <div class="row">
-        <h2>Player</h2>
-        <div class="pill" id="player-name-pill">Not set</div>
-      </div>
-
-      <div id="name-pick" class="name-pick">
-        <label>Pick a display name</label>
-        <div class="row">
-          <input id="player-name-input" maxlength="32" placeholder="Your name" />
-          <button id="player-name-btn">Set</button>
+    <section id="name" class="panel hidden">
+      <div class="card">
+        <h2>Pick your name</h2>
+        <p class="muted">This is what the game master will see.</p>
+        <div class="field">
+          <label>Display name</label>
+          <input id="player-name-input" maxlength="32" placeholder="e.g. Alex" />
         </div>
+        <button id="player-name-btn" class="primary">Start Playing</button>
+      </div>
+    </section>
+
+    <section id="player" class="panel hidden">
+      <div class="topbar">
+        <div class="pill" id="player-name-pill">Player</div>
+        <div class="score-pill">Score <strong id="player-score">0</strong></div>
       </div>
 
       <div class="buzzer-wrap">
-        <button id="buzzer" class="buzzer" disabled>BUZZ</button>
+        <button id="buzzer" class="buzzer" disabled>
+          <span class="buzzer-ring"></span>
+          <span class="buzzer-text">BUZZ</span>
+        </button>
         <p id="buzzer-status" class="muted">Waiting for a question…</p>
-      </div>
-
-      <div class="score-box">
-        <span>Your score</span>
-        <strong id="player-score">0</strong>
       </div>
     </section>
 
-    <section id="gm" class="card hidden">
-      <div class="row space">
-        <h2>Game Master</h2>
-        <div class="row">
+    <section id="gm" class="panel hidden">
+      <div class="gm-head">
+        <div>
+          <h2>Game Master</h2>
+          <p class="muted">Control the round</p>
+        </div>
+        <div class="gm-actions">
           <button id="gm-reveal">Reveal</button>
-          <button id="gm-next">Next Question</button>
+          <button id="gm-next" class="primary">Next</button>
         </div>
       </div>
 
-      <div class="question-box">
-        <div class="label">Question</div>
-        <div id="gm-question" class="question">No questions loaded</div>
-        <div class="answer" id="gm-answer"></div>
-      </div>
-
-      <div class="queue-box">
-        <div class="label">Buzzer Queue</div>
-        <ol id="gm-queue"></ol>
-        <div class="row">
-          <button id="gm-correct" class="good">Correct</button>
-          <button id="gm-incorrect" class="bad">Incorrect</button>
+      <div class="gm-grid">
+        <div class="card">
+          <div class="label">Question</div>
+          <div id="gm-question" class="question">No questions loaded</div>
+          <div id="gm-answer" class="answer"></div>
         </div>
-      </div>
 
-      <div class="scores">
-        <div class="label">Scores</div>
-        <div id="gm-scores" class="scores-list"></div>
-        <button id="gm-reset">Reset Scores</button>
+        <div class="card">
+          <div class="label">Buzzer Queue</div>
+          <ol id="gm-queue" class="queue"></ol>
+          <div class="row">
+            <button id="gm-correct" class="good">Correct</button>
+            <button id="gm-incorrect" class="bad">Incorrect</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="label">Scores</div>
+          <div id="gm-scores" class="scores-list"></div>
+          <button id="gm-reset" class="ghost">Reset Scores</button>
+        </div>
       </div>
     </section>
   </main>
