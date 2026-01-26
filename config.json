@@ -1,0 +1,12 @@
+{
+  "port": 3000,
+  "questionsFile": "data/questions.jsonl",
+  "gameMaster": {
+    "username": "gm",
+    "password": "gm123"
+  },
+  "playerLogin": {
+    "username": "player",
+    "password": "play123"
+  }
+}
