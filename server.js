@@ -260,7 +260,12 @@ io.on('connection', (socket) => {
     if (state.mode === 'first_to' && state.targetScore && player.score >= state.targetScore) {
       resetGame();
       advanceQuestion();
+      resetRound();
+      broadcastState();
+      return;
     }
+    advanceQuestion();
+    resetRound();
     broadcastState();
   });
 
