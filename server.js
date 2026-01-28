@@ -74,6 +74,7 @@ const state = {
   questions: loadQuestions(config.questionsFile),
   questionOrder: [],
   questionPos: 0,
+  roundId: 0,
   queue: [], // array of socket ids
   revealed: true,
   players: new Map(), // socketId -> { name, score }
@@ -122,6 +123,11 @@ function advanceQuestion() {
   }
 }
 
+function nextQuestion() {
+  advanceQuestion();
+  state.roundId += 1;
+}
+
 initQuestionOrder();
 
 function broadcastState() {
@@ -135,7 +141,7 @@ function broadcastState() {
     question: question ? question.q : null,
     queue: queueNames,
     scores: Array.from(state.players.values()).map((p) => ({ name: p.name, score: p.score })),
-    round: state.questionPos,
+    round: state.roundId,
     mode: state.mode,
     targetScore: state.targetScore,
     started: state.started,
@@ -215,7 +221,7 @@ io.on('connection', (socket) => {
 
   socket.on('gm_next', () => {
     if (!state.started) return;
-    advanceQuestion();
+    nextQuestion();
     resetRound();
     broadcastState();
   });
@@ -242,6 +248,7 @@ io.on('connection', (socket) => {
       }
     }
     resetGame();
+    state.roundId += 1;
     state.started = true;
     resetRound();
     broadcastState();
@@ -259,12 +266,12 @@ io.on('connection', (socket) => {
     state.revealed = true;
     if (state.mode === 'first_to' && state.targetScore && player.score >= state.targetScore) {
       resetGame();
-      advanceQuestion();
+      nextQuestion();
       resetRound();
       broadcastState();
       return;
     }
-    advanceQuestion();
+    nextQuestion();
     resetRound();
     broadcastState();
   });
