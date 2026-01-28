@@ -1,0 +1,1619 @@
+[
+  {
+    "id": 1,
+    "category": "General Knowledge",
+    "question": "How many time zones are there in Russia?",
+    "answer": "11",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 2,
+    "category": "General Knowledge",
+    "question": "What's the national flower of Japan?",
+    "answer": "Cherry blossom",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 3,
+    "category": "General Knowledge",
+    "question": "How many stripes are there on the US flag?",
+    "answer": "13",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 4,
+    "category": "General Knowledge",
+    "question": "What's the national animal of Australia?",
+    "answer": "Red kangaroo",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 5,
+    "category": "General Knowledge",
+    "question": "How many days does it take for the Earth to orbit the Sun?",
+    "answer": "365",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 6,
+    "category": "General Knowledge",
+    "question": "Which of the following empires had no written language: Incan, Aztec, Egyptian, Roman?",
+    "answer": "Incan",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 7,
+    "category": "General Knowledge",
+    "question": "Until 1923, what was the Turkish city of Istanbul called?",
+    "answer": "Constantinople",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 8,
+    "category": "World Geography",
+    "question": "What country has the most islands in the world?",
+    "answer": "Sweden",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 9,
+    "category": "World Geography",
+    "question": "What's the smallest country in the world?",
+    "answer": "The Vatican",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 10,
+    "category": "World Geography",
+    "question": "What's the capital of Canada?",
+    "answer": "Ottawa",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 11,
+    "category": "World Geography",
+    "question": "Name the largest (not highest) mountain range in the world.",
+    "answer": "The Andes",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 12,
+    "category": "World Geography",
+    "question": "Where is the lowest natural place on planet Earth?",
+    "answer": "The Mariana Trench",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 13,
+    "category": "World Geography",
+    "question": "Name the longest river in the world.",
+    "answer": "The Nile",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 14,
+    "category": "Language, Literature & Art",
+    "question": "What is the slang name for New York City, used by locals?",
+    "answer": "Gotham",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 15,
+    "category": "Language, Literature & Art",
+    "question": "Name the best-selling book series of the 21st century.",
+    "answer": "Harry Potter",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 16,
+    "category": "Language, Literature & Art",
+    "question": "Which language has the most words (according to dictionary entries)?",
+    "answer": "English",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 17,
+    "category": "Language, Literature & Art",
+    "question": "Which famous graffiti artist comes from Bristol?",
+    "answer": "Banksy",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 18,
+    "category": "Language, Literature & Art",
+    "question": "Norwegian artist Edvard Munch is famous for painting which iconic piece?",
+    "answer": "The Scream",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 19,
+    "category": "Language, Literature & Art",
+    "question": "Which artist painted the ceiling of the Sistine Chapel in Rome?",
+    "answer": "Michelangelo",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 20,
+    "category": "History & Fashion",
+    "question": "When did they open the London underground?",
+    "answer": "1863",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 21,
+    "category": "History & Fashion",
+    "question": "Who invented the World Wide Web, and when?",
+    "answer": "Tim Berners-Lee, 1990",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 22,
+    "category": "History & Fashion",
+    "question": "Who invented the iconic Little Black Dress?",
+    "answer": "Coco Chanel, 1920s",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 23,
+    "category": "History & Fashion",
+    "question": "What happened on July 20th, 1969?",
+    "answer": "Apollo 11 landed on the Moon",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 24,
+    "category": "History & Fashion",
+    "question": "When was the first issue of Vogue published: 1892, 1960, 2000?",
+    "answer": "1892",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 25,
+    "category": "Pop Culture & Music",
+    "question": "Where is Billie Eilish from?",
+    "answer": "Los Angeles",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 26,
+    "category": "Pop Culture & Music",
+    "question": "What city do The Beatles come from?",
+    "answer": "Liverpool",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 27,
+    "category": "Pop Culture & Music",
+    "question": "What is the all-time most-streamed song on Spotify to date?",
+    "answer": "Ed Sheeran, The Shape of You",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 28,
+    "category": "Pop Culture & Music",
+    "question": "What is the most-streamed album on Spotify in 2019?",
+    "answer": "When We Fall Asleep, Where Do We Go? (Billie Eilish)",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 29,
+    "category": "Pop Culture & Music",
+    "question": "How many keys does a classic piano have?",
+    "answer": "88",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 30,
+    "category": "Pop Culture & Music",
+    "question": "Which famous American pop band was originally called \"Kara's Flowers\"?",
+    "answer": "Maroon 5",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 31,
+    "category": "Sports",
+    "question": "Where was the first modern Olympic Games held?",
+    "answer": "Athens, 1896",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 32,
+    "category": "Sports",
+    "question": "Which football team is known as \"The Red Devils\"?",
+    "answer": "Manchester United",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 33,
+    "category": "Sports",
+    "question": "Which driver has won the most Formula 1 championships?",
+    "answer": "Michael Schumacher",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 34,
+    "category": "Sports",
+    "question": "Who is 3rd on the all-time list of female tennis Grand Slam champions?",
+    "answer": "Serena Williams",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 35,
+    "category": "Sports",
+    "question": "What was the clothing company Nike originally called?",
+    "answer": "Blue Ribbon Sports",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 36,
+    "category": "Film & TV",
+    "question": "When was Netflix founded: 1997, 2001, 2009, 2015?",
+    "answer": "1997",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 37,
+    "category": "Film & TV",
+    "question": "What was the most-watched series on Netflix in 2019?",
+    "answer": "Stranger Things",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 38,
+    "category": "Film & TV",
+    "question": "Name Pixar's first feature-length movie.",
+    "answer": "Toy Story, 1995",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 39,
+    "category": "Film & TV",
+    "question": "What is the name of the coffee shop in the sitcom Friends?",
+    "answer": "Central Perk",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 40,
+    "category": "Film & TV",
+    "question": "Name Disney's first film.",
+    "answer": "Snow White, 1937",
+    "difficulty": "Easy"
+  },
+  {
+    "category": "Science",
+    "question": "What type of animal is a Komodo dragon?",
+    "answer": "A lizard",
+    "difficulty": "easy",
+    "id": 41
+  },
+  {
+    "category": "Space",
+    "question": "Which planet in our solar system is known as the 'Red Planet'?",
+    "answer": "Mars",
+    "difficulty": "easy",
+    "id": 42
+  },
+  {
+    "category": "Science",
+    "question": "What do bees collect to make honey?",
+    "answer": "Nectar from flowers",
+    "difficulty": "easy",
+    "id": 43
+  },
+  {
+    "category": "Science",
+    "question": "Which bird can run the fastest: ostrich, penguin, or flamingo?",
+    "answer": "Ostrich",
+    "difficulty": "easy",
+    "id": 44
+  },
+  {
+    "category": "Science",
+    "question": "How many legs does a spider have?",
+    "answer": "Eight",
+    "difficulty": "easy",
+    "id": 45
+  },
+  {
+    "category": "Science",
+    "question": "What is the name of the biggest animal and loudest animal in the world?",
+    "answer": "Blue whale",
+    "difficulty": "easy",
+    "id": 46
+  },
+  {
+    "category": "Space",
+    "question": "What is the largest planet in our solar system?",
+    "answer": "Jupiter",
+    "difficulty": "easy",
+    "id": 47
+  },
+  {
+    "category": "Pop Culture",
+    "question": "What house is Harry Potter in?",
+    "answer": "Gryffindor",
+    "difficulty": "easy",
+    "id": 48
+  },
+  {
+    "category": "Science",
+    "question": "Which bird can fly backwards?",
+    "answer": "Hummingbird",
+    "difficulty": "easy",
+    "id": 49
+  },
+  {
+    "category": "Science",
+    "question": "How many bones are there in the human body?",
+    "answer": "206",
+    "difficulty": "easy",
+    "id": 50
+  },
+  {
+    "category": "Space",
+    "question": "What is the smallest planet in our solar system?",
+    "answer": "Mercury",
+    "difficulty": "easy",
+    "id": 51
+  },
+  {
+    "category": "Science",
+    "question": "What type of animal is a koala?",
+    "answer": "A marsupial",
+    "difficulty": "easy",
+    "id": 52
+  },
+  {
+    "category": "Science",
+    "question": "Which animal has the longest neck?",
+    "answer": "Giraffe",
+    "difficulty": "easy",
+    "id": 53
+  },
+  {
+    "category": "Pop Culture",
+    "question": "What is Mickey Mouse\u2019s beloved dog called?",
+    "answer": "Pluto",
+    "difficulty": "easy",
+    "id": 54
+  },
+  {
+    "category": "Geography",
+    "question": "What is the name of the tallest mountain in the world?",
+    "answer": "Mount Everest",
+    "difficulty": "easy",
+    "id": 55
+  },
+  {
+    "category": "Geography",
+    "question": "What is the name of the biggest ocean in the world?",
+    "answer": "Pacific Ocean",
+    "difficulty": "easy",
+    "id": 56
+  },
+  {
+    "category": "Science",
+    "question": "Which animal is often called the 'king of the jungle'?",
+    "answer": "Lion",
+    "difficulty": "easy",
+    "id": 57
+  },
+  {
+    "category": "Geography",
+    "question": "What is the name of the biggest continent in the world?",
+    "answer": "Asia",
+    "difficulty": "easy",
+    "id": 58
+  },
+  {
+    "category": "Culture",
+    "question": "Which bird is the symbol of peace?",
+    "answer": "Dove",
+    "difficulty": "easy",
+    "id": 59
+  },
+  {
+    "category": "History",
+    "question": "What is the name of the first man to walk on the moon?",
+    "answer": "Neil Armstrong",
+    "difficulty": "easy",
+    "id": 60
+  },
+  {
+    "category": "Literature",
+    "question": "Who wrote the famous novel 'To Kill a Mockingbird'?",
+    "answer": "Harper Lee",
+    "difficulty": "medium",
+    "id": 61
+  },
+  {
+    "category": "History",
+    "question": "What Italian city was destroyed by a volcano?",
+    "answer": "Pompeii",
+    "difficulty": "medium",
+    "id": 62
+  },
+  {
+    "category": "Geography",
+    "question": "What is the smallest country in the world by land area?",
+    "answer": "Vatican City",
+    "difficulty": "easy",
+    "id": 63
+  },
+  {
+    "category": "History",
+    "question": "Who invented the telephone?",
+    "answer": "Alexander Graham Bell",
+    "difficulty": "medium",
+    "id": 64
+  },
+  {
+    "category": "Geography",
+    "question": "What is the name of the world\u2019s tallest building?",
+    "answer": "Burj Khalifa",
+    "difficulty": "medium",
+    "id": 65
+  },
+  {
+    "category": "Science",
+    "question": "What element is Fe on the periodic table?",
+    "answer": "Iron",
+    "difficulty": "easy",
+    "id": 66
+  },
+  {
+    "category": "Geography",
+    "question": "What is the capital city of Australia?",
+    "answer": "Canberra",
+    "difficulty": "medium",
+    "id": 67
+  },
+  {
+    "category": "Art",
+    "question": "Who painted the famous artwork 'The Starry Night'?",
+    "answer": "Vincent van Gogh",
+    "difficulty": "medium",
+    "id": 68
+  },
+  {
+    "category": "Geography",
+    "question": "What is the name of the largest river in the world by volume?",
+    "answer": "Amazon River",
+    "difficulty": "medium",
+    "id": 69
+  },
+  {
+    "category": "Geography",
+    "question": "Which European city is famous for its architecture, including the Gothic cathedral of La Sagrada Familia?",
+    "answer": "Barcelona, Spain",
+    "difficulty": "medium",
+    "id": 70
+  },
+  {
+    "category": "Pop Culture",
+    "question": "Who was Harry Potter\u2019s godfather?",
+    "answer": "Sirius Black",
+    "difficulty": "medium",
+    "id": 71
+  },
+  {
+    "category": "Economics",
+    "question": "What is the name of the currency used in Japan?",
+    "answer": "Japanese yen",
+    "difficulty": "easy",
+    "id": 72
+  },
+  {
+    "category": "History",
+    "question": "What is the name of the famous landmark in Athens, Greece that is a symbol of ancient Greek civilization?",
+    "answer": "The Acropolis",
+    "difficulty": "medium",
+    "id": 73
+  },
+  {
+    "category": "Pop Culture",
+    "question": "Which Disney Princess was created first?",
+    "answer": "Snow White",
+    "difficulty": "medium",
+    "id": 74
+  },
+  {
+    "category": "Geography",
+    "question": "What is the name of the world\u2019s largest ocean?",
+    "answer": "Pacific Ocean",
+    "difficulty": "easy",
+    "id": 75
+  },
+  {
+    "category": "History",
+    "question": "What is the name of the first man to climb Mount Everest?",
+    "answer": "Sir Edmund Hillary",
+    "difficulty": "medium",
+    "id": 76
+  },
+  {
+    "category": "Music",
+    "question": "Who is the lead singer of the rock band 'Queen'?",
+    "answer": "Freddie Mercury",
+    "difficulty": "easy",
+    "id": 77
+  },
+  {
+    "category": "Media",
+    "question": "Which yellow character yells 'D'oh!'?",
+    "answer": "Homer Simpson",
+    "difficulty": "easy",
+    "id": 78
+  },
+  {
+    "category": "Sport",
+    "question": "How many Olympic rings are there?",
+    "answer": "5",
+    "difficulty": "easy",
+    "id": 79
+  },
+  {
+    "category": "Literature",
+    "question": "Who is the author of the famous Harry Potter book series?",
+    "answer": "J.K. Rowling",
+    "difficulty": "easy",
+    "id": 80
+  },
+  {
+    "category": "Space",
+    "question": "Which planet in our solar system has the most moons?",
+    "answer": "Jupiter (79 moons)",
+    "difficulty": "hard",
+    "id": 81
+  },
+  {
+    "category": "Geography",
+    "question": "What is the only continent on Earth where giraffes live in the wild?",
+    "answer": "Africa",
+    "difficulty": "easy",
+    "id": 82
+  },
+  {
+    "category": "History",
+    "question": "Who is the longest-reigning monarch of the UK?",
+    "answer": "Queen Elizabeth II",
+    "difficulty": "easy",
+    "id": 83
+  },
+  {
+    "category": "Sport",
+    "question": "What is the most popular football team in the world?",
+    "answer": "Real Madrid",
+    "difficulty": "hard",
+    "id": 84
+  },
+  {
+    "category": "Media",
+    "question": "Where is the hit TV series 'Peaky Blinders' set?",
+    "answer": "Birmingham, England",
+    "difficulty": "easy",
+    "id": 85
+  },
+  {
+    "category": "Science",
+    "question": "What scientist discovered penicillin?",
+    "answer": "Alexander Fleming",
+    "difficulty": "medium",
+    "id": 86
+  },
+  {
+    "category": "Sport",
+    "question": "What is the world record time for the men\u2019s 100-meter dash in athletics?",
+    "answer": "9.58 seconds (Usain Bolt, 2009)",
+    "difficulty": "hard",
+    "id": 87
+  },
+  {
+    "category": "Media",
+    "question": "In what year did the first episode of 'The Simpsons' air?",
+    "answer": "1989",
+    "difficulty": "medium",
+    "id": 88
+  },
+  {
+    "category": "Science",
+    "question": "What is the largest organ in the human body?",
+    "answer": "The skin",
+    "difficulty": "medium",
+    "id": 89
+  },
+  {
+    "category": "Geography",
+    "question": "What is the busiest airport in the UK?",
+    "answer": "Heathrow",
+    "difficulty": "medium",
+    "id": 90
+  },
+  {
+    "category": "Geography",
+    "question": "What is the highest mountain in Africa?",
+    "answer": "Mount Kilimanjaro",
+    "difficulty": "medium",
+    "id": 91
+  },
+  {
+    "category": "Mythology",
+    "question": "In Greek mythology, which god of the sea had the power to cause earthquakes?",
+    "answer": "Poseidon",
+    "difficulty": "medium",
+    "id": 92
+  },
+  {
+    "category": "History",
+    "question": "Who was the first woman to receive a Nobel Prize?",
+    "answer": "Marie Curie",
+    "difficulty": "medium",
+    "id": 93
+  },
+  {
+    "category": "Food",
+    "question": "What is the national dish of Canada?",
+    "answer": "Poutine",
+    "difficulty": "medium",
+    "id": 94
+  },
+  {
+    "category": "Technology",
+    "question": "Elon Musk is the CEO of which global automotive brand?",
+    "answer": "Tesla",
+    "difficulty": "easy",
+    "id": 95
+  },
+  {
+    "category": "Music",
+    "question": "Which legendary musician is known as the 'King of Rock and Roll'?",
+    "answer": "Elvis Presley",
+    "difficulty": "easy",
+    "id": 96
+  },
+  {
+    "category": "Sport",
+    "question": "In what year did the first modern Olympic Games take place?",
+    "answer": "1896 (Athens)",
+    "difficulty": "hard",
+    "id": 97
+  },
+  {
+    "category": "Food",
+    "question": "What is the main ingredient in a traditional Greek moussaka dish?",
+    "answer": "Aubergine",
+    "difficulty": "medium",
+    "id": 98
+  },
+  {
+    "category": "Geography",
+    "question": "Which continent is the only one that is situated in all four hemispheres?",
+    "answer": "Africa",
+    "difficulty": "hard",
+    "id": 99
+  },
+  {
+    "category": "Language",
+    "question": "What is the longest word in the English language?",
+    "answer": "Pneumonoultramicroscopicsilicovolcanoconiosis",
+    "difficulty": "hard",
+    "id": 100
+  },
+  {
+    "question": "Which country has the highest life expectancy?",
+    "answer": "Hong Kong",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 101
+  },
+  {
+    "question": "What is the most common surname in the United States?",
+    "answer": "Smith",
+    "difficulty": "medium",
+    "category": "Culture",
+    "id": 102
+  },
+  {
+    "question": "Who was the Ancient Greek god of the Sun?",
+    "answer": "Apollo",
+    "difficulty": "medium",
+    "category": "Mythology",
+    "id": 103
+  },
+  {
+    "question": "How many minutes are in a full week?",
+    "answer": "10,080",
+    "difficulty": "medium",
+    "category": "Math",
+    "id": 104
+  },
+  {
+    "question": "Aureolin is a shade of what colour?",
+    "answer": "Yellow",
+    "difficulty": "easy",
+    "category": "Art & Culture",
+    "id": 105
+  },
+  {
+    "question": "How many faces does a dodecahedron have?",
+    "answer": "12",
+    "difficulty": "medium",
+    "category": "Geometry",
+    "id": 106
+  },
+  {
+    "question": "What is the 4th letter of the Greek alphabet?",
+    "answer": "Delta",
+    "difficulty": "easy",
+    "category": "Language",
+    "id": 107
+  },
+  {
+    "question": "What company was initially known as \u201cBlue Ribbon Sports\u201d?",
+    "answer": "Nike",
+    "difficulty": "medium",
+    "category": "Business History",
+    "id": 108
+  },
+  {
+    "question": "What art form is described as \u201cdecorative handwriting\u201d?",
+    "answer": "Calligraphy",
+    "difficulty": "easy",
+    "category": "Art & Culture",
+    "id": 109
+  },
+  {
+    "question": "What software company is headquartered in Redmond, Washington?",
+    "answer": "Microsoft",
+    "difficulty": "easy",
+    "category": "Technology",
+    "id": 110
+  },
+  {
+    "question": "What is a palindrome?",
+    "answer": "A sequence that reads the same backward as forward",
+    "difficulty": "medium",
+    "category": "Language",
+    "id": 111
+  },
+  {
+    "question": "Which day of the week does the Jewish Sabbath begin?",
+    "answer": "Friday",
+    "difficulty": "easy",
+    "category": "Culture",
+    "id": 112
+  },
+  {
+    "question": "Where would you be if you were standing on the Spanish Steps?",
+    "answer": "Rome",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 113
+  },
+  {
+    "question": "What city is known as \u201cThe Eternal City\u201d?",
+    "answer": "Rome",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 114
+  },
+  {
+    "question": "In which country would you find Mount Kilimanjaro?",
+    "answer": "Tanzania",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 115
+  },
+  {
+    "question": "True or false: Halloween originated as an ancient Irish festival.",
+    "answer": "True",
+    "difficulty": "easy",
+    "category": "Culture/History",
+    "id": 116
+  },
+  {
+    "question": "What is the largest Spanish-speaking city in the world?",
+    "answer": "Mexico City",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 117
+  },
+  {
+    "question": "Which country has the most islands?",
+    "answer": "Sweden",
+    "difficulty": "hard",
+    "category": "Geography",
+    "id": 118
+  },
+  {
+    "question": "In which U.S. state is the busiest airport located (as of 2025)?",
+    "answer": "Georgia (Hartsfield-Jackson Atlanta)",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 119
+  },
+  {
+    "question": "Which continent has land in all four hemispheres?",
+    "answer": "Africa",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 120
+  },
+  {
+    "question": "Which river flows through the Grand Canyon?",
+    "answer": "Colorado River",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 121
+  },
+  {
+    "question": "In what capital would you find The Little Mermaid statue?",
+    "answer": "Copenhagen",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 122
+  },
+  {
+    "question": "What is the only flag that does not have four sides?",
+    "answer": "Nepal",
+    "difficulty": "medium",
+    "category": "Geography & Culture",
+    "id": 123
+  },
+  {
+    "question": "How many stars are on the Chinese flag?",
+    "answer": "5",
+    "difficulty": "easy",
+    "category": "Geography & Culture",
+    "id": 124
+  },
+  {
+    "question": "How many elements are in the periodic table?",
+    "answer": "118",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 125
+  },
+  {
+    "question": "Which planet in the Milky Way is the hottest?",
+    "answer": "Venus",
+    "difficulty": "medium",
+    "category": "Space Science",
+    "id": 126
+  },
+  {
+    "question": "Who discovered that the Earth revolves around the sun?",
+    "answer": "Nicolaus Copernicus",
+    "difficulty": "medium",
+    "category": "Science History",
+    "id": 127
+  },
+  {
+    "question": "Which planet has the most moons?",
+    "answer": "Saturn",
+    "difficulty": "medium",
+    "category": "Space Science",
+    "id": 128
+  },
+  {
+    "question": "Which planet is closest to the sun?",
+    "answer": "Mercury",
+    "difficulty": "easy",
+    "category": "Space Science",
+    "id": 129
+  },
+  {
+    "question": "Where is the strongest human muscle located?",
+    "answer": "Jaw",
+    "difficulty": "medium",
+    "category": "Human Biology",
+    "id": 130
+  },
+  {
+    "question": "Which is the only body part fully grown from birth?",
+    "answer": "Eyes",
+    "difficulty": "medium",
+    "category": "Biology",
+    "id": 131
+  },
+  {
+    "question": "How many bones are in an ear?",
+    "answer": "3",
+    "difficulty": "easy",
+    "category": "Anatomy",
+    "id": 132
+  },
+  {
+    "question": "What is the outermost layer of the Earth\u2019s atmosphere called?",
+    "answer": "Exosphere",
+    "difficulty": "medium",
+    "category": "Earth Science",
+    "id": 133
+  },
+  {
+    "question": "What is the process by which plants convert sunlight to energy?",
+    "answer": "Photosynthesis",
+    "difficulty": "easy",
+    "category": "Biology",
+    "id": 134
+  },
+  {
+    "question": "What is the capital of Norway?",
+    "answer": "Oslo",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 135
+  },
+  {
+    "question": "Which metal is liquid at room temperature?",
+    "answer": "Mercury",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 136
+  },
+  {
+    "question": "Who wrote 1984?",
+    "answer": "George Orwell",
+    "difficulty": "easy",
+    "category": "Literature",
+    "id": 137
+  },
+  {
+    "question": "What is the fastest land animal?",
+    "answer": "Cheetah",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 138
+  },
+  {
+    "question": "What does \u201cUSB\u201d stand for?",
+    "answer": "Universal Serial Bus",
+    "difficulty": "medium",
+    "category": "Technology",
+    "id": 139
+  },
+  {
+    "question": "Which country is home to the Great Barrier Reef?",
+    "answer": "Australia",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 140
+  },
+  {
+    "question": "How many strings does a standard guitar have?",
+    "answer": "Six",
+    "difficulty": "easy",
+    "category": "Music",
+    "id": 141
+  },
+  {
+    "question": "Which blood type is known as the universal donor?",
+    "answer": "O negative",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 142
+  },
+  {
+    "question": "What is the tallest building in the world?",
+    "answer": "Burj Khalifa",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 143
+  },
+  {
+    "question": "Who painted The Last Supper?",
+    "answer": "Leonardo da Vinci",
+    "difficulty": "easy",
+    "category": "Art",
+    "id": 144
+  },
+  {
+    "question": "Which planet has the strongest gravity?",
+    "answer": "Jupiter",
+    "difficulty": "medium",
+    "category": "Space",
+    "id": 145
+  },
+  {
+    "question": "What is the longest bone in the human body?",
+    "answer": "Femur",
+    "difficulty": "medium",
+    "category": "Biology",
+    "id": 146
+  },
+  {
+    "question": "Which country invented paper?",
+    "answer": "China",
+    "difficulty": "medium",
+    "category": "History",
+    "id": 147
+  },
+  {
+    "question": "What does \u201cwww\u201d stand for?",
+    "answer": "World Wide Web",
+    "difficulty": "easy",
+    "category": "Technology",
+    "id": 148
+  },
+  {
+    "question": "What is the capital of Argentina?",
+    "answer": "Buenos Aires",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 149
+  },
+  {
+    "question": "Which organ is responsible for detoxifying the body?",
+    "answer": "Liver",
+    "difficulty": "medium",
+    "category": "Biology",
+    "id": 150
+  },
+  {
+    "question": "Who was the first person to walk on the Moon?",
+    "answer": "Neil Armstrong",
+    "difficulty": "easy",
+    "category": "History",
+    "id": 151
+  },
+  {
+    "question": "What is the chemical symbol for sodium?",
+    "answer": "Na",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 152
+  },
+  {
+    "question": "Which sea separates Europe and Africa?",
+    "answer": "Mediterranean Sea",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 153
+  },
+  {
+    "question": "What is the largest desert in the world?",
+    "answer": "Antarctica",
+    "difficulty": "hard",
+    "category": "Geography",
+    "id": 154
+  },
+  {
+    "question": "What is the primary gas found in Earth\u2019s atmosphere?",
+    "answer": "Nitrogen",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 155
+  },
+  {
+    "question": "Which sport uses a shuttlecock?",
+    "answer": "Badminton",
+    "difficulty": "easy",
+    "category": "Sport",
+    "id": 156
+  },
+  {
+    "question": "What is the smallest prime number?",
+    "answer": "2",
+    "difficulty": "easy",
+    "category": "Maths",
+    "id": 157
+  },
+  {
+    "question": "Which country has the most population?",
+    "answer": "India",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 158
+  },
+  {
+    "question": "What is the boiling point of water in Celsius?",
+    "answer": "100\u00b0C",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 159
+  },
+  {
+    "question": "Who composed F\u00fcr Elise?",
+    "answer": "Ludwig van Beethoven",
+    "difficulty": "medium",
+    "category": "Music",
+    "id": 160
+  },
+  {
+    "question": "What does \u201cAI\u201d stand for?",
+    "answer": "Artificial Intelligence",
+    "difficulty": "easy",
+    "category": "Technology",
+    "id": 161
+  },
+  {
+    "question": "Which continent has the most countries?",
+    "answer": "Africa",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 162
+  },
+  {
+    "question": "What is the largest internal organ in the human body?",
+    "answer": "Liver",
+    "difficulty": "medium",
+    "category": "Biology",
+    "id": 163
+  },
+  {
+    "question": "What year did World War I begin?",
+    "answer": "1914",
+    "difficulty": "medium",
+    "category": "History",
+    "id": 164
+  },
+  {
+    "question": "Which planet is famous for its rings?",
+    "answer": "Saturn",
+    "difficulty": "easy",
+    "category": "Space",
+    "id": 165
+  },
+  {
+    "question": "What is the main ingredient in guacamole?",
+    "answer": "Avocado",
+    "difficulty": "easy",
+    "category": "Food",
+    "id": 166
+  },
+  {
+    "question": "Who is known as the \u201cFather of Computers\u201d?",
+    "answer": "Charles Babbage",
+    "difficulty": "hard",
+    "category": "Technology",
+    "id": 167
+  },
+  {
+    "question": "What currency is used in Switzerland?",
+    "answer": "Swiss franc",
+    "difficulty": "medium",
+    "category": "Economics",
+    "id": 168
+  },
+  {
+    "question": "Which mammal lays eggs?",
+    "answer": "Platypus",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 169
+  },
+  {
+    "question": "What is the capital of South Africa?",
+    "answer": "Pretoria (executive)",
+    "difficulty": "hard",
+    "category": "Geography",
+    "id": 170
+  },
+  {
+    "question": "Which element has the atomic number 1?",
+    "answer": "Hydrogen",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 171
+  },
+  {
+    "question": "What is the longest river in South America?",
+    "answer": "Amazon River",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 172
+  },
+  {
+    "question": "Which instrument measures air pressure?",
+    "answer": "Barometer",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 173
+  },
+  {
+    "question": "Who directed the movie Titanic?",
+    "answer": "James Cameron",
+    "difficulty": "easy",
+    "category": "Film",
+    "id": 174
+  },
+  {
+    "question": "What is the main language spoken in Egypt?",
+    "answer": "Arabic",
+    "difficulty": "easy",
+    "category": "Culture",
+    "id": 175
+  },
+  {
+    "question": "What planet is known as Earth\u2019s twin?",
+    "answer": "Venus",
+    "difficulty": "medium",
+    "category": "Space",
+    "id": 176
+  },
+  {
+    "question": "How many players are on a football (soccer) team?",
+    "answer": "11",
+    "difficulty": "easy",
+    "category": "Sport",
+    "id": 177
+  },
+  {
+    "question": "What is the square root of 81?",
+    "answer": "9",
+    "difficulty": "easy",
+    "category": "Maths",
+    "id": 178
+  },
+  {
+    "question": "Which gas is essential for photosynthesis?",
+    "answer": "Carbon dioxide",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 179
+  },
+  {
+    "question": "What is the capital of Iceland?",
+    "answer": "Reykjavik",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 180
+  },
+  {
+    "question": "Who wrote The Hobbit?",
+    "answer": "J.R.R. Tolkien",
+    "difficulty": "easy",
+    "category": "Literature",
+    "id": 181
+  },
+  {
+    "question": "Which organ controls balance?",
+    "answer": "Inner ear",
+    "difficulty": "medium",
+    "category": "Biology",
+    "id": 182
+  },
+  {
+    "question": "What is the hardest rock?",
+    "answer": "Diamond",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 183
+  },
+  {
+    "question": "What is the chemical symbol for gold?",
+    "answer": "Au",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 184
+  },
+  {
+    "question": "Which country gifted the Statue of Liberty to the United States?",
+    "answer": "France",
+    "difficulty": "easy",
+    "category": "History",
+    "id": 185
+  },
+  {
+    "question": "What is the largest mammal on Earth?",
+    "answer": "Blue whale",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 186
+  },
+  {
+    "question": "How many continents are there on Earth?",
+    "answer": "Seven",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 187
+  },
+  {
+    "question": "What is the capital city of New Zealand?",
+    "answer": "Wellington",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 188
+  },
+  {
+    "question": "Who wrote the play \u201cRomeo and Juliet\u201d?",
+    "answer": "William Shakespeare",
+    "difficulty": "easy",
+    "category": "Literature",
+    "id": 189
+  },
+  {
+    "question": "What is the square root of 144?",
+    "answer": "12",
+    "difficulty": "easy",
+    "category": "Maths",
+    "id": 190
+  },
+  {
+    "question": "Which planet is known for its prominent ring system?",
+    "answer": "Saturn",
+    "difficulty": "easy",
+    "category": "Space",
+    "id": 191
+  },
+  {
+    "question": "What does \u201cwww\u201d stand for in a website address?",
+    "answer": "World Wide Web",
+    "difficulty": "easy",
+    "category": "Technology",
+    "id": 192
+  },
+  {
+    "question": "Which ocean is the deepest in the world?",
+    "answer": "Pacific Ocean",
+    "difficulty": "medium",
+    "category": "Geography",
+    "id": 193
+  },
+  {
+    "question": "Who painted the \u201cMona Lisa\u201d?",
+    "answer": "Leonardo da Vinci",
+    "difficulty": "easy",
+    "category": "Art",
+    "id": 194
+  },
+  {
+    "question": "What gas do humans need to breathe to survive?",
+    "answer": "Oxygen",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 195
+  },
+  {
+    "question": "Which country hosted the 2016 Summer Olympics?",
+    "answer": "Brazil",
+    "difficulty": "medium",
+    "category": "Sport",
+    "id": 196
+  },
+  {
+    "question": "What is the main ingredient in bread?",
+    "answer": "Flour",
+    "difficulty": "easy",
+    "category": "Food",
+    "id": 197
+  },
+  {
+    "question": "What device do you use to measure temperature?",
+    "answer": "Thermometer",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 198
+  },
+  {
+    "question": "Which animal is known for changing its colour to blend in?",
+    "answer": "Chameleon",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 199
+  },
+  {
+    "question": "What is the capital of Italy?",
+    "answer": "Rome",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 200
+  },
+  {
+    "question": "Who was the first woman to fly solo across the Atlantic Ocean?",
+    "answer": "Amelia Earhart",
+    "difficulty": "medium",
+    "category": "History",
+    "id": 201
+  },
+  {
+    "question": "What is the hardest natural substance on Earth?",
+    "answer": "Diamond",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 202
+  },
+  {
+    "question": "Which sport uses the terms \u201clove\u201d, \u201cdeuce\u201d, and \u201cace\u201d?",
+    "answer": "Tennis",
+    "difficulty": "easy",
+    "category": "Sport",
+    "id": 203
+  },
+  {
+    "question": "What is the name of the galaxy that contains Earth?",
+    "answer": "The Milky Way",
+    "difficulty": "easy",
+    "category": "Space",
+    "id": 204
+  },
+  {
+    "question": "What is the freezing point of water in degrees Celsius?",
+    "answer": "0\u00b0C",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 205
+  },
+  {
+    "question": "Which instrument has 88 keys?",
+    "answer": "Piano",
+    "difficulty": "easy",
+    "category": "Music",
+    "id": 206
+  },
+  {
+    "question": "Who was the first President of the United States?",
+    "answer": "George Washington",
+    "difficulty": "easy",
+    "category": "History",
+    "id": 207
+  },
+  {
+    "question": "What does \u201cCPU\u201d stand for?",
+    "answer": "Central Processing Unit",
+    "difficulty": "medium",
+    "category": "Technology",
+    "id": 208
+  },
+  {
+    "question": "Which continent is the Sahara Desert located on?",
+    "answer": "Africa",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 209
+  },
+  {
+    "question": "What colour do you get when you mix blue and yellow?",
+    "answer": "Green",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 210
+  },
+  {
+    "question": "Which famous scientist developed the theory of relativity?",
+    "answer": "Albert Einstein",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 211
+  },
+  {
+    "question": "What is the main language spoken in Brazil?",
+    "answer": "Portuguese",
+    "difficulty": "medium",
+    "category": "Culture",
+    "id": 212
+  },
+  {
+    "question": "What does \u201cGPS\u201d stand for?",
+    "answer": "Global Positioning System",
+    "difficulty": "medium",
+    "category": "Technology",
+    "id": 213
+  },
+  {
+    "question": "Which animal is the tallest in the world?",
+    "answer": "Giraffe",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 214
+  },
+  {
+    "question": "What year did World War II end?",
+    "answer": "1945",
+    "difficulty": "medium",
+    "category": "History",
+    "id": 215
+  },
+  {
+    "question": "Which country is famous for inventing pizza?",
+    "answer": "Italy",
+    "difficulty": "easy",
+    "category": "Culture",
+    "id": 216
+  },
+  {
+    "question": "What is the main currency used in the United Kingdom?",
+    "answer": "Pound sterling",
+    "difficulty": "easy",
+    "category": "Economics",
+    "id": 217
+  },
+  {
+    "question": "Which body part is primarily responsible for pumping blood?",
+    "answer": "Heart",
+    "difficulty": "easy",
+    "category": "Science",
+    "id": 218
+  },
+  {
+    "question": "Which planet is known as the \u201cRed Planet\u201d?",
+    "answer": "Mars",
+    "difficulty": "easy",
+    "category": "Space",
+    "id": 219
+  },
+  {
+    "question": "What does \u201cWi-Fi\u201d allow devices to do?",
+    "answer": "Connect to the internet wirelessly",
+    "difficulty": "easy",
+    "category": "Technology",
+    "id": 220
+  },
+  {
+    "question": "Which sport is played at Wimbledon?",
+    "answer": "Tennis",
+    "difficulty": "easy",
+    "category": "Sport",
+    "id": 221
+  },
+  {
+    "question": "What is the tallest mountain in the world?",
+    "answer": "Mount Everest",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 222
+  },
+  {
+    "question": "Who is the author of the Harry Potter series?",
+    "answer": "J.K. Rowling",
+    "difficulty": "easy",
+    "category": "Literature",
+    "id": 223
+  },
+  {
+    "question": "What is the process of liquid water turning into vapour called?",
+    "answer": "Evaporation",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 224
+  },
+  {
+    "question": "Which famous structure is located in Paris and was built in 1889?",
+    "answer": "Eiffel Tower",
+    "difficulty": "easy",
+    "category": "History",
+    "id": 225
+  },
+  {
+    "question": "What is the main function of the lungs?",
+    "answer": "To exchange oxygen and carbon dioxide",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 226
+  },
+  {
+    "question": "Which continent is Antarctica located on?",
+    "answer": "Antarctica",
+    "difficulty": "easy",
+    "category": "Geography",
+    "id": 227
+  },
+  {
+    "question": "What does \u201cHTML\u201d stand for?",
+    "answer": "HyperText Markup Language",
+    "difficulty": "medium",
+    "category": "Technology",
+    "id": 228
+  },
+  {
+    "question": "Which sport does Lionel Messi play?",
+    "answer": "Football (soccer)",
+    "difficulty": "easy",
+    "category": "Sport",
+    "id": 229
+  },
+  {
+    "question": "What is the main ingredient in chocolate?",
+    "answer": "Cocoa",
+    "difficulty": "easy",
+    "category": "Food",
+    "id": 230
+  },
+  {
+    "question": "Which natural disaster is measured using the Richter scale?",
+    "answer": "Earthquakes",
+    "difficulty": "medium",
+    "category": "Science",
+    "id": 231
+  }
+]
