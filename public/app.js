@@ -8,6 +8,7 @@ const gmModeCard = document.getElementById('gm-mode');
 const gmCard = document.getElementById('gm');
 const loginBtn = document.getElementById('login-btn');
 const loginError = document.getElementById('login-error');
+const connectionStatus = document.getElementById('connection-status');
 
 const usernameInput = document.getElementById('login-username');
 const passwordInput = document.getElementById('login-password');
@@ -41,6 +42,13 @@ let role = null;
 let myName = null;
 let hasBuzzed = false;
 let lastRound = null;
+let cachedCreds = null;
+
+try {
+  cachedCreds = JSON.parse(sessionStorage.getItem('quizCreds') || 'null');
+} catch (_) {
+  cachedCreds = null;
+}
 
 function showPanel(panel) {
   loginCard.classList.add('hidden');
@@ -112,6 +120,12 @@ socket.on('login_result', (res) => {
   }
 
   role = res.role;
+  cachedCreds = {
+    username: usernameInput.value.trim(),
+    password: passwordInput.value,
+    role,
+  };
+  sessionStorage.setItem('quizCreds', JSON.stringify(cachedCreds));
   if (role === 'gm') {
     showPanel(gmModeCard);
   } else {
@@ -121,6 +135,7 @@ socket.on('login_result', (res) => {
 
 socket.on('name_set', ({ name }) => {
   myName = name;
+  sessionStorage.setItem('quizName', myName);
   namePill.textContent = name;
   showPanel(waitingCard);
 });
@@ -156,6 +171,10 @@ socket.on('state', (state) => {
   }
 
   if (role === 'player') {
+    if (!myName) {
+      showPanel(nameCard);
+      return;
+    }
     if (!state.started) {
       showPanel(waitingCard);
       return;
@@ -180,6 +199,31 @@ socket.on('state', (state) => {
     const me = state.scores.find((p) => p.name === myName);
     playerScore.textContent = me ? me.score : '0';
   }
+});
+
+socket.on('connect', () => {
+  connectionStatus.textContent = '';
+  const storedName = sessionStorage.getItem('quizName');
+  if (cachedCreds && cachedCreds.username && cachedCreds.password) {
+    usernameInput.value = cachedCreds.username;
+    passwordInput.value = cachedCreds.password;
+    socket.emit('login', {
+      username: cachedCreds.username,
+      password: cachedCreds.password,
+    });
+  }
+  if (storedName) {
+    myName = storedName;
+    socket.emit('set_name', myName);
+  }
+});
+
+socket.on('disconnect', () => {
+  connectionStatus.textContent = 'Connection lost. Reconnecting…';
+});
+
+socket.on('connect_error', () => {
+  connectionStatus.textContent = 'Cannot reach server. Check your connection.';
 });
 
 window.addEventListener('beforeunload', (event) => {
