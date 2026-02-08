@@ -81,6 +81,7 @@ const state = {
   queue: [], // array of socket ids
   revealed: true,
   players: new Map(), // socketId -> { name, score }
+  nameIndex: new Map(), // name -> socketId
   mode: null, // 'first_to' | 'infinite'
   targetScore: null,
   started: false,
@@ -199,16 +200,21 @@ io.on('connection', (socket) => {
     const name = String(nameRaw || '').trim();
     if (!name) return;
 
-    let finalName = name;
-    const existingNames = new Set(Array.from(state.players.values()).map((p) => p.name));
-    if (existingNames.has(finalName)) {
-      let i = 2;
-      while (existingNames.has(`${finalName} ${i}`)) i += 1;
-      finalName = `${finalName} ${i}`;
+    const existingId = state.nameIndex.get(name);
+    if (existingId && existingId !== socket.id) {
+      const existingSocket = io.sockets.sockets.get(existingId);
+      if (existingSocket) {
+        existingSocket.emit('force_logout', { reason: 'Another session took your name.' });
+        existingSocket.disconnect(true);
+      }
+      state.players.delete(existingId);
     }
 
-    state.players.set(socket.id, { name: finalName, score: 0 });
-    socket.emit('name_set', { name: finalName });
+    const previous = state.players.get(socket.id);
+    const score = previous ? previous.score : 0;
+    state.players.set(socket.id, { name, score });
+    state.nameIndex.set(name, socket.id);
+    socket.emit('name_set', { name });
     broadcastState();
   });
 
@@ -295,11 +301,24 @@ io.on('connection', (socket) => {
     broadcastState();
   });
 
+  socket.on('gm_reset_lobby', () => {
+    if (socket.data.role !== 'gm') return;
+    state.queue = [];
+    state.players.clear();
+    state.nameIndex.clear();
+    io.emit('lobby_reset');
+    broadcastState();
+  });
+
   socket.on('disconnect', () => {
     if (state.queue.includes(socket.id)) {
       state.queue = state.queue.filter((id) => id !== socket.id);
     }
     if (state.players.has(socket.id)) {
+      const player = state.players.get(socket.id);
+      if (player && state.nameIndex.get(player.name) === socket.id) {
+        state.nameIndex.delete(player.name);
+      }
       state.players.delete(socket.id);
     }
     broadcastState();

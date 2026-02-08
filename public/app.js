@@ -30,6 +30,7 @@ const gmNext = document.getElementById('gm-next');
 const gmCorrect = document.getElementById('gm-correct');
 const gmIncorrect = document.getElementById('gm-incorrect');
 const gmReset = document.getElementById('gm-reset');
+const gmResetLobby = document.getElementById('gm-reset-lobby');
 
 const modeInfinite = document.getElementById('mode-infinite');
 const modeFirst = document.getElementById('mode-first');
@@ -112,6 +113,7 @@ if (gmNext) gmNext.addEventListener('click', () => socket.emit('gm_next'));
 if (gmCorrect) gmCorrect.addEventListener('click', () => socket.emit('gm_correct'));
 if (gmIncorrect) gmIncorrect.addEventListener('click', () => socket.emit('gm_incorrect'));
 if (gmReset) gmReset.addEventListener('click', () => socket.emit('gm_reset_scores'));
+if (gmResetLobby) gmResetLobby.addEventListener('click', () => socket.emit('gm_reset_lobby'));
 
 socket.on('login_result', (res) => {
   if (!res.ok) {
@@ -138,6 +140,12 @@ socket.on('name_set', ({ name }) => {
   sessionStorage.setItem('quizName', myName);
   namePill.textContent = name;
   showPanel(waitingCard);
+});
+
+socket.on('force_logout', () => {
+  sessionStorage.removeItem('quizName');
+  myName = null;
+  showPanel(nameCard);
 });
 
 socket.on('state', (state) => {
@@ -224,6 +232,14 @@ socket.on('disconnect', () => {
 
 socket.on('connect_error', () => {
   connectionStatus.textContent = 'Cannot reach server. Check your connection.';
+});
+
+socket.on('lobby_reset', () => {
+  sessionStorage.removeItem('quizName');
+  sessionStorage.removeItem('quizCreds');
+  myName = null;
+  role = null;
+  showPanel(loginCard);
 });
 
 window.addEventListener('beforeunload', (event) => {
