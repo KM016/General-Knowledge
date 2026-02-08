@@ -293,6 +293,34 @@ button:disabled {
   margin: 12px 0 10px;
 }
 
+.answers-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.answer-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.answer-card .name {
+  font-weight: 600;
+}
+
+.typein-wrap {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.typein-wrap input {
+  flex: 1;
+}
+
 .score-chip {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 12px;

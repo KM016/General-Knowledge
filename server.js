@@ -86,6 +86,8 @@ const state = {
   targetScore: null,
   started: false,
   buzzersOpen: false,
+  playMode: null, // 'buzzer' | 'type'
+  answers: new Map(), // socketId -> answer
 };
 
 function getCurrentQuestion() {
@@ -98,6 +100,7 @@ function resetRound() {
   state.queue = [];
   state.revealed = true;
   state.buzzersOpen = false;
+  state.answers.clear();
 }
 
 function resetGame() {
@@ -152,24 +155,35 @@ function broadcastState() {
     targetScore: state.targetScore,
     started: state.started,
     buzzersOpen: state.buzzersOpen,
+    playMode: state.playMode,
   };
 
   for (const socket of io.sockets.sockets.values()) {
     if (socket.data.role === 'gm') {
+      const answers = [];
+      for (const [id, answer] of state.answers.entries()) {
+        const player = state.players.get(id);
+        if (player) {
+          answers.push({ id, name: player.name, answer });
+        }
+      }
       socket.emit('state', {
         ...basePayload,
         revealed: true,
         answer: question ? question.a : null,
         category: question ? question.category : null,
         difficulty: question ? question.difficulty : null,
+        answers,
       });
     } else if (socket.data.role === 'player') {
+      const playerAnswer = state.answers.get(socket.id) || null;
       socket.emit('state', {
         ...basePayload,
         revealed: false,
         answer: null,
         category: null,
         difficulty: null,
+        playerAnswer,
       });
     }
   }
@@ -225,6 +239,7 @@ io.on('connection', (socket) => {
     if (!state.players.has(socket.id)) return;
     if (!getCurrentQuestion()) return;
     if (!state.started) return;
+    if (state.playMode !== 'buzzer') return;
     if (!state.buzzersOpen) return;
     if (state.queue.includes(socket.id)) return;
 
@@ -262,7 +277,8 @@ io.on('connection', (socket) => {
     }
     resetGame();
     state.roundId += 1;
-    state.started = true;
+    state.started = false;
+    state.playMode = null;
     resetRound();
     broadcastState();
     if (typeof ack === 'function') ack({ ok: true });
@@ -270,11 +286,45 @@ io.on('connection', (socket) => {
 
   socket.on('gm_toggle_buzzers', (open) => {
     if (socket.data.role !== 'gm') return;
+    if (state.playMode !== 'buzzer') return;
     state.buzzersOpen = !!open;
     broadcastState();
   });
 
+  socket.on('gm_set_play_mode', (mode) => {
+    if (socket.data.role !== 'gm') return;
+    if (mode !== 'buzzer' && mode !== 'type') return;
+    state.playMode = mode;
+    state.started = true;
+    resetRound();
+    broadcastState();
+  });
+
+  socket.on('submit_answer', (answerRaw) => {
+    if (!state.players.has(socket.id)) return;
+    if (!getCurrentQuestion()) return;
+    if (!state.started) return;
+    if (state.playMode !== 'type') return;
+    const answer = String(answerRaw || '').trim();
+    if (!answer) return;
+    state.answers.set(socket.id, answer);
+    broadcastState();
+  });
+
+  socket.on('gm_mark_answer', ({ id, correct }) => {
+    if (socket.data.role !== 'gm') return;
+    if (!state.answers.has(id)) return;
+    const player = state.players.get(id);
+    if (!player) return;
+    if (correct) {
+      player.score += 1;
+    }
+    state.answers.delete(id);
+    broadcastState();
+  });
+
   socket.on('gm_correct', () => {
+    if (state.playMode !== 'buzzer') return;
     const currentId = state.queue[0];
     if (!currentId) return;
     const player = state.players.get(currentId);
@@ -296,6 +346,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('gm_incorrect', () => {
+    if (state.playMode !== 'buzzer') return;
     if (!state.queue.length) return;
     state.queue.shift();
     if (!state.queue.length) {
@@ -316,6 +367,7 @@ io.on('connection', (socket) => {
     state.queue = [];
     state.players.clear();
     state.nameIndex.clear();
+    state.answers.clear();
     io.emit('lobby_reset');
     broadcastState();
   });
@@ -330,6 +382,9 @@ io.on('connection', (socket) => {
         state.nameIndex.delete(player.name);
       }
       state.players.delete(socket.id);
+    }
+    if (state.answers.has(socket.id)) {
+      state.answers.delete(socket.id);
     }
     broadcastState();
   });

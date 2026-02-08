@@ -24,7 +24,7 @@
         <div>
           <h1>Da Game</h1>
           <p class="muted">insert some quote</p>
-          <p class="version">ver. 69.0.1</p>
+          <p class="version">ver. 69.0.67</p>
         </div>
       </div>
 
@@ -70,12 +70,21 @@
         <div class="score-pill">Score <strong id="player-score">0</strong></div>
       </div>
 
-      <div class="buzzer-wrap">
+      <div class="buzzer-wrap" id="buzzer-wrap">
         <button id="buzzer" class="buzzer" disabled>
           <span class="buzzer-ring"></span>
           <span class="buzzer-text">BUZZ</span>
         </button>
         <p id="buzzer-status" class="muted">Waiting for a question…</p>
+      </div>
+
+      <div id="typein-wrap" class="typein-wrap hidden">
+        <label for="typein-input">Your answer</label>
+        <div class="row">
+          <input id="typein-input" type="text" placeholder="Type your answer" />
+          <button id="typein-submit" class="primary">Submit</button>
+        </div>
+        <p id="typein-status" class="muted"></p>
       </div>
     </section>
 
@@ -102,6 +111,23 @@
       </div>
     </section>
 
+    <section id="gm-play-mode" class="panel hidden">
+      <div class="card">
+        <h2>Choose play style</h2>
+        <p class="muted">How should players answer?</p>
+        <div class="mode-grid">
+          <button id="play-buzzer" class="mode-btn">
+            <span>Buzzer</span>
+            <small>Fastest buzz wins</small>
+          </button>
+          <button id="play-type" class="mode-btn">
+            <span>Type in</span>
+            <small>Everyone submits an answer</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section id="gm" class="panel hidden">
       <div class="gm-head">
         <div>
@@ -125,13 +151,18 @@
           <div id="gm-answer" class="answer"></div>
         </div>
 
-        <div class="card">
+        <div class="card" id="gm-queue-card">
           <div class="label">Queue</div>
           <ol id="gm-queue" class="queue"></ol>
           <div class="row">
             <button id="gm-correct" class="good">Correct</button>
             <button id="gm-incorrect" class="bad">Incorrect</button>
           </div>
+        </div>
+
+        <div class="card" id="gm-answers-card">
+          <div class="label">Answers</div>
+          <div id="gm-answers" class="answers-list"></div>
         </div>
 
         <div class="card">
