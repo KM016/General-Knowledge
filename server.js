@@ -364,10 +364,16 @@ io.on('connection', (socket) => {
 
   socket.on('gm_reset_lobby', () => {
     if (socket.data.role !== 'gm') return;
+    resetGame();
     state.queue = [];
     state.players.clear();
     state.nameIndex.clear();
     state.answers.clear();
+    state.mode = null;
+    state.playMode = null;
+    state.started = false;
+    state.buzzersOpen = false;
+    state.roundId += 1;
     io.emit('lobby_reset');
     broadcastState();
   });
