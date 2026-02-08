@@ -31,6 +31,7 @@ const gmCorrect = document.getElementById('gm-correct');
 const gmIncorrect = document.getElementById('gm-incorrect');
 const gmReset = document.getElementById('gm-reset');
 const gmResetLobby = document.getElementById('gm-reset-lobby');
+const gmBuzzers = document.getElementById('gm-buzzers');
 
 const modeInfinite = document.getElementById('mode-infinite');
 const modeFirst = document.getElementById('mode-first');
@@ -114,6 +115,10 @@ if (gmCorrect) gmCorrect.addEventListener('click', () => socket.emit('gm_correct
 if (gmIncorrect) gmIncorrect.addEventListener('click', () => socket.emit('gm_incorrect'));
 if (gmReset) gmReset.addEventListener('click', () => socket.emit('gm_reset_scores'));
 if (gmResetLobby) gmResetLobby.addEventListener('click', () => socket.emit('gm_reset_lobby'));
+if (gmBuzzers) gmBuzzers.addEventListener('click', () => {
+  const open = gmBuzzers.dataset.open !== 'true';
+  socket.emit('gm_toggle_buzzers', open);
+});
 
 socket.on('login_result', (res) => {
   if (!res.ok) {
@@ -159,6 +164,10 @@ socket.on('state', (state) => {
     gmAnswer.textContent = state.answer ? `Answer: ${state.answer}` : '';
     gmCategory.textContent = state.category ? `Category: ${state.category}` : 'Category: —';
     gmDifficulty.textContent = state.difficulty ? `Difficulty: ${state.difficulty}` : 'Difficulty: —';
+    if (gmBuzzers) {
+      gmBuzzers.dataset.open = state.buzzersOpen ? 'true' : 'false';
+      gmBuzzers.textContent = state.buzzersOpen ? 'Lock Buzzers' : 'Unlock Buzzers';
+    }
 
     gmQueue.innerHTML = '';
     state.queue.forEach((name) => {
@@ -189,7 +198,7 @@ socket.on('state', (state) => {
     }
 
     showPanel(playerCard);
-    const isActive = !!state.question;
+    const isActive = !!state.question && state.buzzersOpen;
     if (state.round !== lastRound) {
       hasBuzzed = false;
       lastRound = state.round;
@@ -197,7 +206,7 @@ socket.on('state', (state) => {
 
     buzzer.disabled = !myName || !isActive || hasBuzzed;
     if (!isActive) {
-      buzzerStatus.textContent = 'Waiting for a question…';
+      buzzerStatus.textContent = state.question ? 'Buzzer locked by host.' : 'Waiting for a question…';
     } else if (hasBuzzed) {
       buzzerStatus.textContent = 'Buzzer Inactive';
     } else {

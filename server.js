@@ -85,6 +85,7 @@ const state = {
   mode: null, // 'first_to' | 'infinite'
   targetScore: null,
   started: false,
+  buzzersOpen: false,
 };
 
 function getCurrentQuestion() {
@@ -96,6 +97,7 @@ function getCurrentQuestion() {
 function resetRound() {
   state.queue = [];
   state.revealed = true;
+  state.buzzersOpen = false;
 }
 
 function resetGame() {
@@ -149,6 +151,7 @@ function broadcastState() {
     mode: state.mode,
     targetScore: state.targetScore,
     started: state.started,
+    buzzersOpen: state.buzzersOpen,
   };
 
   for (const socket of io.sockets.sockets.values()) {
@@ -222,6 +225,7 @@ io.on('connection', (socket) => {
     if (!state.players.has(socket.id)) return;
     if (!getCurrentQuestion()) return;
     if (!state.started) return;
+    if (!state.buzzersOpen) return;
     if (state.queue.includes(socket.id)) return;
 
     state.queue.push(socket.id);
@@ -262,6 +266,12 @@ io.on('connection', (socket) => {
     resetRound();
     broadcastState();
     if (typeof ack === 'function') ack({ ok: true });
+  });
+
+  socket.on('gm_toggle_buzzers', (open) => {
+    if (socket.data.role !== 'gm') return;
+    state.buzzersOpen = !!open;
+    broadcastState();
   });
 
   socket.on('gm_correct', () => {
